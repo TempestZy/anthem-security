@@ -1,0 +1,6 @@
+#服务器端口
+server:
+  port: 19001
+spring:
+  application:
+    name: anthem-security
