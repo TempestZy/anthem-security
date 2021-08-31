@@ -1,7 +1,7 @@
 package com.tempest.anthem;
 
 import com.tempest.anthem.entity.AnthemUser;
-import com.tempest.anthem.mapper.UserMapper;
+import com.tempest.anthem.mapper.AnthemUserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,12 +12,12 @@ import java.util.List;
 class AnthemSecurityApplicationTests {
 
     @Autowired
-    private UserMapper userMapper;
+    private AnthemUserMapper anthemUserMapper;
 
     @Test
     void contextLoads() {
         System.out.println("mybatis plus select begin ----");
-        List<AnthemUser> anthemUserList = userMapper.selectList(null);
+        List<AnthemUser> anthemUserList = anthemUserMapper.selectList(null);
         anthemUserList.forEach(System.out::println);
     }
 

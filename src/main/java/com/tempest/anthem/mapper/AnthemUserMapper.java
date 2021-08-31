@@ -9,5 +9,5 @@ import com.tempest.anthem.entity.AnthemUser;
  * @author tempest_zy
  * @date 2021-08-31 16:14
  */
-public interface UserMapper extends BaseMapper<AnthemUser> {
+public interface AnthemUserMapper extends BaseMapper<AnthemUser> {
 }

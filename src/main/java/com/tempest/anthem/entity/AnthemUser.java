@@ -1,9 +1,14 @@
 package com.tempest.anthem.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * user
@@ -13,7 +18,12 @@ import java.io.Serializable;
  */
 @Data
 @TableName("anthem_user")
-public class AnthemUser implements Serializable {
+public class AnthemUser implements UserDetails {
+
+    @TableId(
+            value = "id",
+            type = IdType.ASSIGN_ID
+    )
     private Long id;
 
     private String name;
@@ -26,4 +36,33 @@ public class AnthemUser implements Serializable {
 
     private String phone;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return name;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
 }
