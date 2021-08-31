@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * spring security启动类
+ * spring security startup class
  *
  * @author tempest_zy
  * @date 2021-08-31
