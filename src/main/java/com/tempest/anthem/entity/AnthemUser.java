@@ -36,9 +36,12 @@ public class AnthemUser implements UserDetails {
 
     private String phone;
 
+    @TableField(exist = false)
+    private Collection<? extends GrantedAuthority> authorities;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
 
     @Override

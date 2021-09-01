@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.tempest.anthem.entity.AnthemUser;
 import com.tempest.anthem.mapper.AnthemUserMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,7 +25,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AnthemUser anthemUser = anthemUserMapper
                 .selectOne(Wrappers.<AnthemUser>lambdaQuery().eq(AnthemUser::getName, username));
-        if (anthemUser == null){
+        if (anthemUser == null) {
             throw new UsernameNotFoundException("用户不存在");
         }
         return anthemUser;

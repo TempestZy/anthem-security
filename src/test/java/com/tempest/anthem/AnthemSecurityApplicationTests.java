@@ -5,6 +5,8 @@ import com.tempest.anthem.mapper.AnthemUserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -16,9 +18,9 @@ class AnthemSecurityApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("mybatis plus select begin ----");
-        List<AnthemUser> anthemUserList = anthemUserMapper.selectList(null);
-        anthemUserList.forEach(System.out::println);
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+        System.out.println(passwordEncoder.encode("123456"));
     }
 
 }

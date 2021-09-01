@@ -1,4 +1,4 @@
-package com.tempest.anthem.config.login;
+package com.tempest.anthem.config.authentication;
 
 import com.tempest.anthem.entity.AnthemUser;
 import lombok.AllArgsConstructor;
@@ -10,8 +10,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
 
 /**
  * set anthem authentication
